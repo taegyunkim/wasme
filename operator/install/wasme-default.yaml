@@ -5,19 +5,6 @@ kind: Namespace
 metadata:
   name: wasme
 ---
-# Source: Wasme Operator/templates/configmap.yaml
-# ConfigMap wasme-cache
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  labels:
-    app: wasme-cache
-    configmap: wasme-cache
-  name: wasme-cache
-  namespace: wasme
-data:
-  images: ""
----
 # Source: Wasme Operator/templates/deployment.yaml
 # Service account for wasme-operator
 
@@ -39,6 +26,19 @@ metadata:
     app: wasme-cache
   name: wasme-cache
   namespace: wasme
+---
+# Source: Wasme Operator/templates/configmap.yaml
+# ConfigMap wasme-cache
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: wasme-cache
+    configmap: wasme-cache
+  name: wasme-cache
+  namespace: wasme
+data:
+  images: ""
 ---
 # Source: Wasme Operator/templates/rbac.yaml
 kind: ClusterRole
@@ -184,7 +184,7 @@ spec:
           name: wasme-cache
         name: config
       containers:
-      - image: quay.io/solo-io/wasme:dev
+      - image: docker.io/taegyunk91/wasme:dev
         args:
         - cache
         - --directory
@@ -239,7 +239,7 @@ spec:
     spec:
       serviceAccountName: wasme-operator
       containers:
-      - image: quay.io/solo-io/wasme:dev
+      - image: docker.io/taegyunk91/wasme:dev
         args:
         - operator
         - --log-level=debug
