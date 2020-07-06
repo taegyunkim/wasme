@@ -37,7 +37,7 @@ var _ = Describe("Deploy", func() {
 			if gcloudProject := os.Getenv("GCLOUD_PROJECT_ID"); gcloudProject != "" {
 				return fmt.Sprintf("gcr.io/%v/wasme", gcloudProject)
 			}
-			return "quay.io/solo-io/wasme"
+			return "docker.io/taegyunk91/wasme"
 		}()
 	)
 

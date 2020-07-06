@@ -25,7 +25,7 @@ type Deployer interface {
 var (
 	CacheName            = "wasme-cache"
 	CacheNamespace       = "wasme"
-	CacheImageRepository = "quay.io/solo-io/wasme"
+	CacheImageRepository = "docker.io/taegyunk91/wasme"
 	CacheImageTag        = version.Version
 	ImagesKey            = "images"
 	DefaultCacheArgs     = func(namespace string) []string {

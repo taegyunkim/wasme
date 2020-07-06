@@ -6,7 +6,7 @@ OUTDIR?=_output
 PROJECT?=wasme
 
 BUILDER_IMAGE?=quay.io/solo-io/ee-builder
-OPERATOR_IMAGE?=quay.io/solo-io/wasme
+OPERATOR_IMAGE?=docker.io/taegyunk91/wasme
 
 SOURCES := $(shell find . -name "*.go" | grep -v test.go | grep -v '\.\#*')
 RELEASE := "true"

@@ -89,7 +89,7 @@ func main() {
 }
 
 var (
-	defaultRegistry = "quay.io/solo-io"
+	defaultRegistry = "docker.io/taegyunk91"
 )
 
 // cache and operator share same image
