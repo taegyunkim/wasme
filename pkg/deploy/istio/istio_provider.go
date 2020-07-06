@@ -401,7 +401,7 @@ func (p *Provider) makeIstioEnvoyFilter(filter *v1.FilterSpec, image pull.Image,
 
 	makeMatch := func() *networkingv1alpha3.EnvoyFilter_EnvoyConfigObjectMatch {
 		return &networkingv1alpha3.EnvoyFilter_EnvoyConfigObjectMatch{
-			Context: networkingv1alpha3.EnvoyFilter_SIDECAR_INBOUND,
+			Context: networkingv1alpha3.EnvoyFilter_ANY,
 			ObjectTypes: &networkingv1alpha3.EnvoyFilter_EnvoyConfigObjectMatch_Listener{
 				Listener: &networkingv1alpha3.EnvoyFilter_ListenerMatch{
 					FilterChain: &networkingv1alpha3.EnvoyFilter_ListenerMatch_FilterChainMatch{
